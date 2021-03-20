@@ -1,4 +1,4 @@
-/*
+
 const xhttp = new XMLHttpRequest()
 xhttp.responseType = 'json'
 xhttp.onreadystatechange = function () {
@@ -9,8 +9,8 @@ xhttp.onreadystatechange = function () {
 }
 xhttp.open('GET', 'https://api.exchangeratesapi.io/latest? HTTP/1.1', true)
 xhttp.send()
-*/
 
+/*
 const xhttp = new XMLHttpRequest()
 xhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
@@ -20,4 +20,4 @@ xhttp.onreadystatechange = function () {
 }
 xhttp.open('GET', 'https://api.iextrading.com/1.0/ref-data/symbols', true)
 xhttp.send()
-
+*/

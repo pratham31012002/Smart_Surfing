@@ -80,6 +80,7 @@ document.addEventListener('mouseup', function (e) {
   bubbleDOM.style.visibility = 'hidden'
   bubbleDOM1.style.visibility = 'hidden'
   bubbleDOM2.style.visibility = 'hidden'
+  bubbleDOM3.style.visibility = 'hidden'
   const selection = window.getSelection().toString()
   apicss[0].addEventListener('click', (e) => {
     bubbleDOM1.style.visibility = 'visible'
@@ -91,6 +92,11 @@ document.addEventListener('mouseup', function (e) {
     bubbleDOM.style.visibility = 'hidden'
     // dictionary(selection)
     dictionarytxt(selection)
+  })
+  apicss[2].addEventListener('click', (e) => {
+    bubbleDOM3.style.visibility = 'visible'
+    bubbleDOM.style.visibility = 'hidden'
+    currencyapi(selection)
   })
   // selection.replace(' ','%2C%20')
   // const data = 'q=Hello%2C%20world!&source=en&target=es'
@@ -143,7 +149,9 @@ function translateui (sel) {
 
 // apitranslate
 function translate (selection1) {
-  bubbleDOM1.innerHTML = ""
+  bubbleDOM1.style.visibility = 'visible'
+  bubbleDOM.style.visibility = 'hidden'
+  bubbleDOM1.innerHTML = ''
   const data1 = 'q=' + selection1
   const xhr1 = new XMLHttpRequest()
   xhr1.responseType = 'json'
@@ -176,7 +184,7 @@ function translate (selection1) {
     if (this.readyState === this.DONE) {
       if (selection1.length > 0) {
         console.log('translate language')
-        bubbleDOM1.innerHTML=this.response.data.translations[0].translatedText
+        bubbleDOM1.innerHTML = this.response.data.translations[0].translatedText
         console.log('translate language')
       }
     }
@@ -201,7 +209,9 @@ function dictionary (sel1) {
 
 // apidictionary
 function dictionarytxt (selection2) {
-  bubbleDOM2.innerHTML = ""
+  bubbleDOM2.style.visibility = 'visible'
+  bubbleDOM.style.visibility = 'hidden'
+  bubbleDOM2.innerHTML = ''
   const data = null
 
   const xhr = new XMLHttpRequest()
@@ -220,4 +230,19 @@ function dictionarytxt (selection2) {
   xhr.setRequestHeader('x-rapidapi-host', 'mashape-community-urban-dictionary.p.rapidapi.com')
 
   xhr.send(data)
+}
+
+// currencyapi
+function currencyapi (selec) {
+  const xhttp = new XMLHttpRequest()
+  xhttp.responseType = 'json'
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+    // Typical action to be performed when the document is ready:
+      bubbleDOM3.innerHTML=parseInt(xhttp.response.USD_INR)*parseInt(selec)
+      //console.log(parseInt(xhttp.response.USD_INR)*parseInt(selec))
+    }
+  }
+  xhttp.open('GET', 'https://free.currconv.com/api/v7/convert?q=USD_INR&compact=ultra&apiKey=91588b10c2e928df38f9', true)
+  xhttp.send()
 }
