@@ -1,4 +1,4 @@
-<img src="images/LOGO3.png" height="150px"></img>
+<img src="images/LOGO3.png" height="150px" align="center"></img>
 # Smart_Surfing
 Smart Surfing is a chrome extension that's main purpose is to boost productivity by optimizing your web browsing experience by providing relevant information based on the text you select.
 # Installation Guide to Run Locally
