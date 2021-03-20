@@ -1,43 +1,3 @@
-/*
-'use strict';
-let GetURL = document.getElementById('GetURL');
-GetURL.onclick = function(element) {
-  getCurrentTabUrl();
-};
-document.getElementById('getText').onclick = function(element) {
-  chrome.tabs.executeScript( {
-  code: "window.getSelection().toString();"
-}, function(selection) {
-  document.getElementById("selectedtext").innerHTML = selection[0];
-});
-};
-function modifyDOM() {
-        //You can play with your DOM here or check URL against your regex
-        console.log('Tab script:');
-        console.log(document.body);
-        document.body.style.background = "blue"
-        return true;
-    }
-document.getElementById('colorChange').onclick = function(element) {
-  chrome.tabs.executeScript( {
-  code: '(' + modifyDOM + ')();' //argument here is a string but function.toString() returns function's code
-}, function(selection) {
-  alert(selection);
-});
-};
-function getCurrentTabUrl() {
-  var queryInfo = {
-    active: true,
-    currentWindow: true
-  };
-  chrome.tabs.query(queryInfo, (tabs) => {
-    var tab = tabs[0];
-    var url = tab.url;
-    document.getElementById('url').innerHTML = url;
-  });
-}
-*/
-
 const bubbleDOM = document.createElement('div')
 const bubbleDOM1 = document.createElement('div')
 const bubbleDOM2 = document.createElement('div')
@@ -64,6 +24,7 @@ for (i = 0; i < 9; i++) {
   api.setAttribute('class', 'apicss')
   bubbleDOM.appendChild(api)
 }
+bubbleDOM6.style='display:flex;flex-direction:column;justify-content:flex-start;'
 document.body.appendChild(bubbleDOM)
 document.body.appendChild(bubbleDOM1)
 document.body.appendChild(bubbleDOM2)
@@ -114,32 +75,51 @@ document.addEventListener('mouseup', function (e) {
   bubbleDOM6.style.visibility = 'hidden'
   bubbleDOM7.style.visibility = 'hidden'
   bubbleDOM8.style.visibility = 'hidden'
-  const selection = window.getSelection().toString()
+  let selection = window.getSelection().toString()
   apicss[0].addEventListener('click', (e) => {
     bubbleDOM1.style.visibility = 'visible'
     bubbleDOM.style.visibility = 'hidden'
-    translate(selection)
+    if(selection!=""){
+    translate(selection)}
+    selection = ""
   })
   apicss[1].addEventListener('click', (e) => {
     bubbleDOM2.style.visibility = 'visible'
     bubbleDOM.style.visibility = 'hidden'
     // dictionary(selection)
-    dictionarytxt(selection)
+    if(selection!=""){
+    dictionarytxt(selection)}
+    selection = ""
   })
   apicss[2].addEventListener('click', (e) => {
     bubbleDOM3.style.visibility = 'visible'
     bubbleDOM.style.visibility = 'hidden'
-    currencyapi(selection)
+    if(selection!=""){
+    currencyapi(selection)}
+    selection = ""
   })
   apicss[3].addEventListener('click', (e) => {
     bubbleDOM4.style.visibility = 'visible'
     bubbleDOM.style.visibility = 'hidden'
-    imdb(selection)
+    if(selection!=""){
+    imdb(selection)}
+    selection = ""
   })
   apicss[4].addEventListener('click', (e) => {
     bubbleDOM5.style.visibility = 'visible'
     bubbleDOM.style.visibility = 'hidden'
-    stock(selection)
+    if(selection!=""){
+    stock(selection)}
+    selection = ""
+  })
+  apicss[5].addEventListener('click', (e) => {
+    bubbleDOM6.style.visibility = 'visible'
+    bubbleDOM.style.visibility = 'hidden'
+    if(selection!=""){
+    const addnote = document.createElement('div')
+    addnote.innerHTML="<ol><li>"+selection+"</li></ol>"
+    bubbleDOM6.appendChild(addnote)}
+    selection = ""
   })
   // selection.replace(' ','%2C%20')
   // const data = 'q=Hello%2C%20world!&source=en&target=es'
