@@ -27,8 +27,7 @@ We all like to surf the web, but some times, we come up with certain keywords ab
 
 
 ## Contributors
-- [Pratham Jain] (https://github.com/pratham31012002)
-- [Vaibhav Bhartia] (https://github.com/VaibhavBha)
-- [Thaman Muthappa M N] (https://github.com/Thamanmuthappa)
-- [Rishi Malgwa] (https://github.com/rishimalgwa)
+- [Pratham Jain](https://github.com/pratham31012002)
+- [Vaibhav Bhartia](https://github.com/VaibhavBha)
+- [Thaman Muthappa M N](https://github.com/Thamanmuthappa)
 - [Rishi Malgwa](https://github.com/rishimalgwa)
