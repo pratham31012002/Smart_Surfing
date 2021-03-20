@@ -1,5 +1,3 @@
-# Smart Surfing
-
 <p align="center">
   <img src="images/LOGO3.png" height="100px"></img>
 </p>
