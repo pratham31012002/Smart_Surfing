@@ -1,0 +1,18 @@
+{  
+    "name": "Smart Surfing",
+    "version": "1.0",  
+    "description": "Smart Surfing",  
+    "permissions": ["activeTab", "declarativeContent", "storage","contextMenus"],
+    "browser_action": {  
+        "default_popup": "popup.html"  
+    },
+    "content_scripts":[{
+        "matches":["<all_urls>"],
+        "css": ["style.css"],
+        //"js":["popup.js","currency.js"],
+        "js":["popup.js","jquery-3.6.0.js","currency.js"],
+        "run_at": "document_end",
+        "all_frames": true
+    }],  
+    "manifest_version": 2  
+  }
