@@ -75,14 +75,23 @@ document.body.appendChild(bubbleDOM7)
 document.body.appendChild(bubbleDOM8)
 document.body.appendChild(bubbleDOM9)
 const apicss = bubbleDOM.querySelectorAll('.apicss')
-apicss[0].addEventListener('click', (e) => {
-  bubbleDOM1.style.visibility = 'visible'
-  bubbleDOM.style.visibility = 'hidden'
-})
+
 document.addEventListener('mouseup', function (e) {
   bubbleDOM.style.visibility = 'hidden'
   bubbleDOM1.style.visibility = 'hidden'
+  bubbleDOM2.style.visibility = 'hidden'
   const selection = window.getSelection().toString()
+  apicss[0].addEventListener('click', (e) => {
+    bubbleDOM1.style.visibility = 'visible'
+    bubbleDOM.style.visibility = 'hidden'
+    translate(selection)
+  })
+  apicss[1].addEventListener('click', (e) => {
+    bubbleDOM2.style.visibility = 'visible'
+    bubbleDOM.style.visibility = 'hidden'
+    // dictionary(selection)
+    dictionarytxt(selection)
+  })
   // selection.replace(' ','%2C%20')
   // const data = 'q=Hello%2C%20world!&source=en&target=es'
   if (selection.length > 0) {
@@ -121,4 +130,94 @@ function renderBubble (mouseX, mouseY, selection) {
   bubbleDOM9.style.top = mouseY + 'px'
   bubbleDOM9.style.left = mouseX + 'px'
   bubbleDOM.style.visibility = 'visible'
+}
+
+// structure of translate
+function translateui (sel) {
+  bubbleDOM1.innerHTML = "<div class='translatebtn'></div>"
+  document.querySelector('.translatebtn').addEventListener('click', (e) => {
+    bubbleDOM1.style.visibility = 'visible'
+    bubbleDOM.style.visibility = 'hidden'
+  })
+}
+
+// apitranslate
+function translate (selection1) {
+  bubbleDOM1.innerHTML = ""
+  const data1 = 'q=' + selection1
+  const xhr1 = new XMLHttpRequest()
+  xhr1.responseType = 'json'
+  xhr1.withCredentials = true
+  let ans1 = ''
+
+  xhr1.addEventListener('readystatechange', function () {
+    if (this.readyState === this.DONE) {
+      console.log('detect language')
+      ans1 = this.response.data.detections[0][0].language
+      console.log(ans1)
+      console.log('detect language')
+    }
+  })
+
+  xhr1.open('POST', 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect')
+  xhr1.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
+  xhr1.setRequestHeader('x-rapidapi-key', '82ac7c2be1msh0d48de9f5617937p13df8ejsnebcdc8710a5c')
+  xhr1.setRequestHeader('x-rapidapi-host', 'google-translate1.p.rapidapi.com')
+
+  xhr1.send(data1)
+
+  const data = 'q=' + selection1 + '&source=' + ans1 + '&target=en'
+
+  const xhr = new XMLHttpRequest()
+  xhr.responseType = 'json'
+  xhr.withCredentials = true
+
+  xhr.addEventListener('readystatechange', function () {
+    if (this.readyState === this.DONE) {
+      if (selection1.length > 0) {
+        console.log('translate language')
+        bubbleDOM1.innerHTML=this.response.data.translations[0].translatedText
+        console.log('translate language')
+      }
+    }
+  })
+
+  xhr.open('POST', 'https://google-translate1.p.rapidapi.com/language/translate/v2')
+  xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
+  xhr.setRequestHeader('x-rapidapi-key', '82ac7c2be1msh0d48de9f5617937p13df8ejsnebcdc8710a5c')
+  xhr.setRequestHeader('x-rapidapi-host', 'google-translate1.p.rapidapi.com')
+
+  xhr.send(data)
+}
+
+// structure of dictionary
+function dictionary (sel1) {
+  bubbleDOM2.innerHTML = "<div class='translatebtn1'></div>"
+  document.querySelector('.translatebtn1').addEventListener('click', (e) => {
+    bubbleDOM2.style.visibility = 'visible'
+    bubbleDOM.style.visibility = 'hidden'
+  })
+}
+
+// apidictionary
+function dictionarytxt (selection2) {
+  bubbleDOM2.innerHTML = ""
+  const data = null
+
+  const xhr = new XMLHttpRequest()
+  xhr.responseType = 'json'
+  xhr.withCredentials = true
+
+  xhr.addEventListener('readystatechange', function () {
+    if (this.readyState === this.DONE) {
+      console.log(this.response.list[0].definition)
+      bubbleDOM2.innerHTML = this.response.list[0].definition
+    }
+  })
+  const query = 'https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=' + selection2
+  xhr.open('GET', query)
+  xhr.setRequestHeader('x-rapidapi-key', 'e64af7e547mshc9f85bc651c024bp1bdffbjsn0ced214f02ca')
+  xhr.setRequestHeader('x-rapidapi-host', 'mashape-community-urban-dictionary.p.rapidapi.com')
+
+  xhr.send(data)
 }

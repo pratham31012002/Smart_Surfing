@@ -10,7 +10,7 @@
         "matches":["<all_urls>"],
         "css": ["style.css"],
         //"js":["popup.js","currency.js"],
-        "js":["popup.js","jquery-3.6.0.js","currency.js"],
+        "js":["popup.js","jquery-3.6.0.js"],
         "run_at": "document_end",
         "all_frames": true
     }],  
