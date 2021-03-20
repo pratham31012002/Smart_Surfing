@@ -31,3 +31,4 @@ We all like to surf the web, but some times, we come up with certain keywords ab
 - [Vaibhav Bhartia] (https://github.com/VaibhavBha)
 - [Thaman Muthappa M N] (https://github.com/Thamanmuthappa)
 - [Rishi Malgwa] (https://github.com/rishimalgwa)
+- [Rishi Malgwa](https://github.com/rishimalgwa)
