@@ -76,6 +76,35 @@ document.body.appendChild(bubbleDOM8)
 document.body.appendChild(bubbleDOM9)
 const apicss = bubbleDOM.querySelectorAll('.apicss')
 
+var image = document.createElement("img");
+image.src = chrome.runtime.getURL("images/svgs/transl.svg");
+var image1 = document.createElement("img");
+image1.src = chrome.runtime.getURL("images/svgs/dictionary.svg");
+var image2 = document.createElement("img");
+image2.src = chrome.runtime.getURL("images/svgs/currency.svg");
+var image3 = document.createElement("img");
+image3.src = chrome.runtime.getURL("images/svgs/imdb.svg");
+var image4 = document.createElement("img");
+image4.src = chrome.runtime.getURL("images/svgs/stocks.svg");
+var image5 = document.createElement("img");
+image5.src = chrome.runtime.getURL("images/svgs/addnote.svg");
+var image6 = document.createElement("img");
+image6.src = chrome.runtime.getURL("images/svgs/rating.svg");
+var image7 = document.createElement("img");
+image7.src = chrome.runtime.getURL("images/svgs/unitconvert.svg");
+var image8 = document.createElement("img");
+image8.src = chrome.runtime.getURL("images/svgs/price.svg");
+apicss[0].appendChild(image);
+apicss[1].appendChild(image1);
+apicss[2].appendChild(image2);
+apicss[3].appendChild(image3);
+apicss[4].appendChild(image4);
+apicss[5].appendChild(image5);
+apicss[6].appendChild(image6);
+apicss[7].appendChild(image7);
+apicss[8].appendChild(image8);
+
+
 document.addEventListener('mouseup', function (e) {
   bubbleDOM.style.visibility = 'hidden'
   bubbleDOM1.style.visibility = 'hidden'
@@ -169,7 +198,7 @@ function translate (selection1) {
 
   xhr1.open('POST', 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect')
   xhr1.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
-  xhr1.setRequestHeader('x-rapidapi-key', '82ac7c2be1msh0d48de9f5617937p13df8ejsnebcdc8710a5c')
+  xhr1.setRequestHeader('x-rapidapi-key', 'd26246e695msh215478d2cada68dp1668cfjsn5e5985bd6b76')
   xhr1.setRequestHeader('x-rapidapi-host', 'google-translate1.p.rapidapi.com')
 
   xhr1.send(data1)
@@ -192,7 +221,7 @@ function translate (selection1) {
 
   xhr.open('POST', 'https://google-translate1.p.rapidapi.com/language/translate/v2')
   xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
-  xhr.setRequestHeader('x-rapidapi-key', '82ac7c2be1msh0d48de9f5617937p13df8ejsnebcdc8710a5c')
+  xhr.setRequestHeader('x-rapidapi-key', 'd26246e695msh215478d2cada68dp1668cfjsn5e5985bd6b76')
   xhr.setRequestHeader('x-rapidapi-host', 'google-translate1.p.rapidapi.com')
 
   xhr.send(data)
@@ -231,18 +260,21 @@ function dictionarytxt (selection2) {
 
   xhr.send(data)
 }
-
+let count = 0
 // currencyapi
 function currencyapi (selec) {
-  const xhttp = new XMLHttpRequest()
-  xhttp.responseType = 'json'
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-    // Typical action to be performed when the document is ready:
-      bubbleDOM3.innerHTML=parseInt(xhttp.response.USD_INR)*parseInt(selec)
-      //console.log(parseInt(xhttp.response.USD_INR)*parseInt(selec))
+    const xhttp = new XMLHttpRequest()
+    xhttp.responseType = 'json'
+    if(count==1){
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+      // Typical action to be performed when the document is ready:
+        bubbleDOM3.innerHTML=parseInt(xhttp.response.USD_INR)*parseInt(selec)
+        //console.log(parseInt(xhttp.response.USD_INR)*parseInt(selec))
+      }
     }
   }
   xhttp.open('GET', 'https://free.currconv.com/api/v7/convert?q=USD_INR&compact=ultra&apiKey=91588b10c2e928df38f9', true)
+  count+=1
   xhttp.send()
 }
