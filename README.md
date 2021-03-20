@@ -1,9 +1,16 @@
+# Smart Surfing
+
 <p align="center">
   <img src="images/LOGO3.png" height="100px"></img>
 </p>
 
-## Smart_Surfing
-We all like to surf the web, but some times, we come up with certain keywords about which we don't have much information. We have to manually go to new tab and search for that specific word for more information. So we came up with idea of SMART SURFING, a chrome extension that's main purpose is to boost productivity by optimizing your web browsing experience by providing relevant information based on the text you select. The following features will be added.
+## Introduction
+We all like to surf the web, but some times, we come up with certain keywords about which we don't have much information. We have to manually go to new tab and search for that specific word for more information, this process is unnecessarily time consuming.
+With **Smart Surfing** users can get relavant information on any selected text, without having to shift to a new tab.
+
+## About Smart Surfing
+Smart Surfing, is a chrome extension that's main purpose is to boost productivity by optimizing your web browsing experience by providing relevant information based on the text you select.
+
 
 ## Features
 - Converts currency of one nationality to another
@@ -17,6 +24,15 @@ We all like to surf the web, but some times, we come up with certain keywords ab
 - Provides you with the latest stock price of the company
 - Provides ratings of books (Goodreads)
 - Plagiarism checker
+
+## Applications
+
+## How it works
+
+## Requirements
+
+
+## Tech Stack
 
 ## Installation Guide to Run Locally
 - Clone the repository on your local system
