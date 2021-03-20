@@ -34,7 +34,7 @@ Smart Surfing, is a chrome extension that's main purpose is to boost productivit
 
 ## Installation Guide to Run Locally
 - Clone the repository on your local system
-- Open chrome://extensions/ on your chrome browser
+- Open [chrome://extensions/](chrome://extensions/) on your chrome browser
 - Turn on Developer Mode
 - Click on Load Unpacked
 - Go to the location of the repository and click Select Folder
