@@ -4,7 +4,7 @@
 
 ## Introduction
 We all like to surf the web, but some times, we come up with certain keywords about which we don't have much information. We have to manually go to new tab and search for that specific word for more information, this process is unnecessarily time consuming.
-With **Smart Surfing** users can get relavant information on any selected text, without having to shift to a new tab.
+With **Smart Surfing**, users can get relavant information on any selected text, without having to shift to a new tab.
 
 ## About Smart Surfing
 Smart Surfing, is a chrome extension that's main purpose is to boost productivity by optimizing your web browsing experience by providing relevant information based on the text you select.
@@ -24,8 +24,6 @@ Smart Surfing, is a chrome extension that's main purpose is to boost productivit
 - Plagiarism checker
 
 ## Applications
-
-## How it works
 
 ## Requirements
 
