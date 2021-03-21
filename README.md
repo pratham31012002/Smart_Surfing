@@ -12,21 +12,17 @@ Smart Surfing, is a chrome extension that's main purpose is to boost productivit
 
 ## Features
 - Converts currency of one nationality to another
-- Units converter
 - Add notes with comments
-- Translates several languages 
+- Translates several languages
 - Provides ratings of movies (IMDB)
 - Dictionary
-- Estimates time of travel from your location to another
-- Estimates travel distance from your location to another
 - Provides you with the latest stock price of the company
-- Provides ratings of books (Goodreads)
-- Plagiarism checker
+- Geolocation of a country
+- Ingredients of food
 
-## Applications
 
 ## Requirements
-
+The source code of this project is written in **`HTML/CSS/JS`**. So, you do not require anything extra to run this project.
 
 ## Tech Stack
 - CSS
@@ -36,6 +32,9 @@ Smart Surfing, is a chrome extension that's main purpose is to boost productivit
 
 ## Installation Guide to Run Locally
 - Clone the repository on your local system
+```bash
+$ git clone https://github.com/pratham31012002/Smart_Surfing
+```
 - Open [chrome://extensions/](https://chrome://extensions/) on your chrome browser
 - Turn on Developer Mode
 - Click on Load Unpacked
