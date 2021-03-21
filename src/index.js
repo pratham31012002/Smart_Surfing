@@ -8,7 +8,7 @@ const bubbleDOM6 = document.createElement('div')
 const bubbleDOM7 = document.createElement('div')
 const bubbleDOM8 = document.createElement('div')
 const bubbleDOM9 = document.createElement('div')
-bubbleDOM.setAttribute('class', 'selection_bubble')
+bubbleDOM.setAttribute('class', 'selection_bubble1')
 bubbleDOM1.setAttribute('class', 'selection_bubble')
 bubbleDOM2.setAttribute('class', 'selection_bubble')
 bubbleDOM3.setAttribute('class', 'selection_bubble')
@@ -24,7 +24,15 @@ for (i = 0; i < 9; i++) {
   api.setAttribute('class', 'apicss')
   bubbleDOM.appendChild(api)
 }
-bubbleDOM6.style='display:flex;flex-direction:column;justify-content:flex-start;'
+bubbleDOM6.style='display:flex;flex-direction:column;justify-content:flex-start;background-color:#B2F0FF;border: 15px solid #FFFFFF;'
+bubbleDOM1.style='background-color:#B2F0FF;border: 15px solid #FFFFFF;'
+bubbleDOM2.style='background-color:#B2BDFF;border: 15px solid #FFFFFF;'
+bubbleDOM3.style='background-color:#BEFFB2;border: 15px solid #FFFFFF;'
+bubbleDOM4.style='background-color:#FFEDB2;border: 15px solid #FFFFFF;'
+bubbleDOM5.style='background-color:#F7CBFF;border: 15px solid #FFFFFF;'
+bubbleDOM6.style='background-color:#A9FFDA;border: 15px solid #FFFFFF;'
+bubbleDOM7.style='background-color:#B2BDFF;border: 15px solid #FFFFFF;padding-left:0px;'
+bubbleDOM8.style='background-color:#FFEDB2;border: 15px solid #FFFFFF;'
 document.body.appendChild(bubbleDOM)
 document.body.appendChild(bubbleDOM1)
 document.body.appendChild(bubbleDOM2)
@@ -44,15 +52,15 @@ image1.src = chrome.runtime.getURL('images/svgs/dictionary.svg')
 const image2 = document.createElement('img')
 image2.src = chrome.runtime.getURL('images/svgs/currency.svg')
 const image3 = document.createElement('img')
-image3.src = chrome.runtime.getURL('images/svgs/imdb.svg')
+image3.src = chrome.runtime.getURL('images/svgs/imdb1.svg')
 const image4 = document.createElement('img')
 image4.src = chrome.runtime.getURL('images/svgs/stocks.svg')
 const image5 = document.createElement('img')
 image5.src = chrome.runtime.getURL('images/svgs/addnote.svg')
 const image6 = document.createElement('img')
-image6.src = chrome.runtime.getURL('images/svgs/rating.svg')
+image6.src = chrome.runtime.getURL('images/svgs/location.svg')
 const image7 = document.createElement('img')
-image7.src = chrome.runtime.getURL('images/svgs/unitconvert.svg')
+image7.src = chrome.runtime.getURL('images/svgs/food.svg')
 const image8 = document.createElement('img')
 image8.src = chrome.runtime.getURL('images/svgs/price.svg')
 apicss[0].appendChild(image)
@@ -86,7 +94,6 @@ document.addEventListener('mouseup', function (e) {
   apicss[1].addEventListener('click', (e) => {
     bubbleDOM2.style.visibility = 'visible'
     bubbleDOM.style.visibility = 'hidden'
-    // dictionary(selection)
     if(selection!=""){
     dictionarytxt(selection)}
     selection = ""
@@ -117,8 +124,22 @@ document.addEventListener('mouseup', function (e) {
     bubbleDOM.style.visibility = 'hidden'
     if(selection!=""){
     const addnote = document.createElement('div')
-    addnote.innerHTML="<ol><li>"+selection+"</li></ol>"
+    addnote.innerHTML="<ul><li>"+selection+"</li></ul>"
     bubbleDOM6.appendChild(addnote)}
+    selection = ""
+  })
+  apicss[6].addEventListener('click', (e) => {
+    bubbleDOM7.style.visibility = 'visible'
+    bubbleDOM.style.visibility = 'hidden'
+    if(selection!=""){
+    country(selection)}
+    selection = ""
+  })
+  apicss[7].addEventListener('click', (e) => {
+    bubbleDOM8.style.visibility = 'visible'
+    bubbleDOM.style.visibility = 'hidden'
+    if(selection!=""){
+    goodread(selection)}
     selection = ""
   })
   // selection.replace(' ','%2C%20')
@@ -192,7 +213,7 @@ function translate (selection1) {
 
   xhr1.open('POST', 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect')
   xhr1.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
-  xhr1.setRequestHeader('x-rapidapi-key', 'd26246e695msh215478d2cada68dp1668cfjsn5e5985bd6b76')
+  xhr1.setRequestHeader('x-rapidapi-key', 'd65221d8bdmsh1cdf6cec54dc013p192908jsn04d9cbe4cfdc')
   xhr1.setRequestHeader('x-rapidapi-host', 'google-translate1.p.rapidapi.com')
 
   xhr1.send(data1)
@@ -207,7 +228,8 @@ function translate (selection1) {
     if (this.readyState === this.DONE) {
       if (selection1.length > 0) {
         console.log('translate language')
-        bubbleDOM1.innerHTML = this.response.data.translations[0].translatedText
+
+        bubbleDOM1.innerHTML = "<b>Original: </b>" + selection1 + "<br><b>Translated: </b>"+this.response.data.translations[0].translatedText
         console.log('translate language')
       }
     }
@@ -215,7 +237,7 @@ function translate (selection1) {
 
   xhr.open('POST', 'https://google-translate1.p.rapidapi.com/language/translate/v2')
   xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
-  xhr.setRequestHeader('x-rapidapi-key', 'd26246e695msh215478d2cada68dp1668cfjsn5e5985bd6b76')
+  xhr.setRequestHeader('x-rapidapi-key', 'd65221d8bdmsh1cdf6cec54dc013p192908jsn04d9cbe4cfdc')
   xhr.setRequestHeader('x-rapidapi-host', 'google-translate1.p.rapidapi.com')
 
   xhr.send(data)
@@ -243,8 +265,10 @@ function dictionarytxt (selection2) {
 
   xhr.addEventListener('readystatechange', function () {
     if (this.readyState === this.DONE) {
-      console.log(this.response.list[0].definition)
-      bubbleDOM2.innerHTML = this.response.list[0].definition
+      console.log(this.response.list)
+      bubbleDOM2.innerHTML = "<p align='left'><b>Word: "+selection2.toUpperCase()+"</b><br></p>"
+      bubbleDOM2.innerHTML = bubbleDOM2.innerHTML+this.response.list[0].definition
+      
     }
   })
   const query = 'https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=' + selection2
@@ -262,7 +286,10 @@ function currencyapi (selec) {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       // Typical action to be performed when the document is ready:
-      bubbleDOM3.innerHTML = parseFloat(xhttp.response.USD_INR) * parseFloat(selec)
+      bubbleDOM3.innerHTML = "<p align='center'><b>Original Currency: </b>"+selec+"<br></p>"
+      const currans = parseFloat(xhttp.response.USD_INR) * parseFloat(selec.substring(1))
+      console.log(parseFloat(selec.substring(1)))
+      bubbleDOM3.innerHTML = bubbleDOM3.innerHTML + "<p align='center'><b>Converted Currency: </b>"+currans+"</p>"
       // console.log(parseInt(xhttp.response.USD_INR)*parseInt(selec))
     }
   }
@@ -280,7 +307,10 @@ function imdb (selec5) {
   xhr.addEventListener('readystatechange', function () {
     if (this.readyState === this.DONE) {
       console.log(this.response.rating)
-      bubbleDOM4.innerHTML = this.response.rating
+      bubbleDOM4.innerHTML = "<b>Rating:</b>"+this.response.rating + "<br><b>Lead Cast:</b>"
+      bubbleDOM4.innerHTML = bubbleDOM4.innerHTML +this.response.cast[0].actor+","+this.response.cast[1].actor+"<br><b>Plot:</b>"
+      bubbleDOM4.innerHTML = bubbleDOM4.innerHTML + "<br>"+this.response.plot+"<br>"
+      console.log(this.response)
     }
   })
 
@@ -309,9 +339,11 @@ function stock (selec5) {
 
       xhr12.addEventListener("readystatechange", function () {
 	    if (this.readyState === this.DONE) {
-        const stockoutans = 72*parseFloat(this.response["Global Quote"]["05. price"])
-		    console.log(stockoutans);
-        bubbleDOM5.innerHTML = stockoutans
+        const stockoutans = parseFloat(this.response["Global Quote"]["03. high"]).toFixed(2)
+        const stockoutans1 = parseFloat(this.response["Global Quote"]["04. low"]).toFixed(2)
+        const stockoutans2 = parseFloat(this.response["Global Quote"]["05. price"]).toFixed(2)
+		    console.log(this.response);
+        bubbleDOM5.innerHTML = "<b>Name: </b>" + selec5 + "<b>Current Price: </b>" + stockoutans2 + "<br><b>Lowest Price: </b>" + stockoutans1 + "<br><b>Highest Price: </b>" + stockoutans
 	    }
       });
 
@@ -330,3 +362,42 @@ function stock (selec5) {
   
   xhr.send(data);
 }
+
+
+function country (selec) {
+  const xhttp = new XMLHttpRequest()
+  xhttp.responseType = 'json'
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      // Typical action to be performed when the document is ready:
+      const aq=xhttp.response[0].name
+      const sw=xhttp.response[0].currencies[0].name
+      const de=xhttp.response[0].languages[0].name
+      bubbleDOM7.innerHTML="<ol><li><b>Country:</b> "+aq+"</li><li><b>Currency:</b> "+sw+"</li><li><b>Language:</b> "+de+"</li></ol>"
+      // console.log(parseInt(xhttp.response.USD_INR)*parseInt(selec))
+    }
+  }
+  xhttp.open('GET', 'https://restcountries.eu/rest/v2/capital/'+selec, true)
+  xhttp.send()
+}
+
+function goodread (selec) {
+  const data = null;
+
+const xhr = new XMLHttpRequest();
+xhr.responseType = 'json'
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		bubbleDOM8.innerHTML="<b>Ingredients</b><br>"+this.response.hints[0].food.foodContentsLabel;
+	}
+});
+
+xhr.open("GET", "https://edamam-food-and-grocery-database.p.rapidapi.com/parser?ingr="+selec);
+xhr.setRequestHeader("x-rapidapi-key", "53f7801bdamsha54ea83970e4847p14683ejsn2fae6caf5675");
+xhr.setRequestHeader("x-rapidapi-host", "edamam-food-and-grocery-database.p.rapidapi.com");
+
+xhr.send(data);
+}
+

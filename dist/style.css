@@ -1,4 +1,4 @@
-.selection_bubble {
+.selection_bubble1 {
     display: flex;
     justify-content: space-around;
     width: 220px;
@@ -15,8 +15,24 @@
     box-shadow:0px 7.5px 7.5px rgb(185, 185, 185);
     -webkit-box-shadow:0px 7.5px 10px rgb(185, 185, 185);
     -moz-box-shadow:0px 7.5px 7.5px rgb(185, 185, 185);
-    
-    
+}
+.selection_bubble {
+    display: flex;
+    justify-content: space-around;
+    width: 170px;
+    padding-left:10px;
+    padding-top: 10px;
+    flex-wrap: wrap;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:#FFFFFF;
+    border-radius: 10px;
+    box-shadow:0px 7.5px 7.5px rgb(185, 185, 185);
+    -webkit-box-shadow:0px 7.5px 10px rgb(185, 185, 185);
+    -moz-box-shadow:0px 7.5px 7.5px rgb(185, 185, 185);
+    padding:15px;
 }
 .apicss{
     flex-basis: 60px;

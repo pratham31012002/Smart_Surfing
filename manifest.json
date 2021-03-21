@@ -6,7 +6,7 @@
     "browser_action": {  
         "default_popup": "dist/index.html"  
     },
-    "web_accessible_resources": ["images/svgs/transl.svg","images/svgs/addnote.svg","images/svgs/rating.svg","images/svgs/dictionary.svg","images/svgs/currency.svg","images/svgs/imdb.svg","images/svgs/stocks.svg","images/svgs/price.svg","images/svgs/unitconvert.svg"],
+    "web_accessible_resources": ["images/svgs/transl.svg","images/svgs/addnote.svg","images/svgs/rating.svg","images/svgs/dictionary.svg","images/svgs/currency.svg","images/svgs/imdb.svg","images/svgs/stocks.svg","images/svgs/price.svg","images/svgs/unitconvert.svg","images/svgs/imdb1.svg","images/svgs/location.svg","images/svgs/food.svg"],
     "content_scripts":[{
         "matches":["<all_urls>"],
         "css": ["dist/style.css"],
