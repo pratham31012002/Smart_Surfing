@@ -1,6 +1,7 @@
 <p align="center">
   <img src="images/LOGO3.png" height="100px"></img>
 </p>
+[![Generic badge](https://img.shields.io/badge/view-video-orange)](https://drive.google.com/drive/folders/1O4r344jpLkHPgaRsTAsxErdI_8OSG8bp)
 
 # Introduction
 We all like to surf the web, but some times, we come up with certain keywords about which we don't have much information. We have to manually go to new tab and search for that specific word for more information, this process is unnecessarily time consuming.
