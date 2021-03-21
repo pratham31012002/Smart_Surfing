@@ -1,6 +1,11 @@
+# Smart Surfing
+
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/pratham31012002/Smart_Surfing/?logo=github&style=social)](https://github.com/pratham31012002/) [![GitHub last commit](https://img.shields.io/github/last-commit/akshatvg/Narrative?style=social&logo=git)](https://github.com/akshatvg/) [![GitHub stars](https://img.shields.io/github/stars/pratham31012002/Smart_Surfing?style=social)](https://github.com/pratham31012002/Smart_Surfing/stargazers) [![GitHub forks](https://img.shields.io/github/forks/akshatvg/Narrative?style=social&logo=git)](https://github.com/akshatvg/Narrative/network)
+
 <p align="center">
   <img src="images/LOGO3.png" height="100px"></img>
 </p>
+
 [![Generic badge](https://img.shields.io/badge/view-video-orange)](https://drive.google.com/drive/folders/1O4r344jpLkHPgaRsTAsxErdI_8OSG8bp)
 
 # Introduction
