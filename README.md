@@ -4,11 +4,10 @@
 
 ## Introduction
 We all like to surf the web, but some times, we come up with certain keywords about which we don't have much information. We have to manually go to new tab and search for that specific word for more information, this process is unnecessarily time consuming.
-With **Smart Surfing**, users can get relavant information on any selected text, without having to shift to a new tab.
+With **Smart Surfing** users can get relevant information on any selected text, without having to shift to a new tab.
 
 ## About Smart Surfing
 Smart Surfing, is a chrome extension that's main purpose is to boost productivity by optimizing your web browsing experience by providing relevant information based on the text you select.
-
 
 ## Features
 - Converts currency of one nationality to another
@@ -20,6 +19,12 @@ Smart Surfing, is a chrome extension that's main purpose is to boost productivit
 - Geolocation of a country
 - Ingredients of food
 
+## Buisness Model
+### MODEL 1:
+We can make it freemium extension in which a user can make only certain number of request after limit exceed they have to pay for subscription
+
+### MODEL 2:
+We can make it a free extension in which a user can make any number of request. With their search information data we can show them personalized ad and generate revenue.
 
 ## Requirements
 The source code of this project is written in **`HTML/CSS/JS`**. So, you do not require anything extra to run this project.
@@ -33,8 +38,9 @@ The source code of this project is written in **`HTML/CSS/JS`**. So, you do not 
 ## Installation Guide to Run Locally
 - Clone the repository on your local system
 ```bash
-$ git clone https://github.com/pratham31012002/Smart_Surfing
+$ git clone https://github.com/pratham31012002/Smart_Surfing.git
 ```
+
 - Open [chrome://extensions/](https://chrome://extensions/) on your chrome browser
 - Turn on Developer Mode
 - Click on Load Unpacked
