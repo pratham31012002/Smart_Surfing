@@ -29,6 +29,10 @@ Smart Surfing, is a chrome extension that's main purpose is to boost productivit
 
 
 ## Tech Stack
+- CSS
+- JavaScript
+- HTML
+- Adobe Photoshop
 
 ## Installation Guide to Run Locally
 - Clone the repository on your local system
