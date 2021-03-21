@@ -55,16 +55,16 @@ $ git clone https://github.com/pratham31012002/Smart_Surfing.git
 
 # Future Implementations
 - App Integration
--- we could create a browser app in which all these features are well integrated with maching learning.
+- - we could create a browser app in which all these features are well integrated with maching learning.
 
 - Machine learning model
--- Creating a model that would filter out unrelevant features to create a more precise User Interface.
+- - Creating a model that would filter out unrelevant features to create a more precise User Interface.
 
 - Back end integration (Node.JS,MongoDB)
--- User would be able to set default properties (such as language to be translated to), which would further help simplify the UI.
+- - User would be able to set default properties (such as language to be translated to), which would further help simplify the UI.
 
 - Open Source
--- Creating an open source community who would maintain the API's called and implement new features.
+- - Creating an open source community who would maintain the API's called and implement new features.
 
 # Contributors
 - [Pratham Jain](https://github.com/pratham31012002)
