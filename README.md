@@ -1,6 +1,6 @@
 # Smart Surfing
 
-[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/pratham31012002/Smart_Surfing?logo=github&style=social)](https://github.com/pratham31012002/) [![GitHub last commit](https://img.shields.io/github/last-commit/pratham31012002/Smart_Surfing?style=social&logo=git)](https://github.com/pratham31012002/) [![GitHub stars](https://img.shields.io/github/stars/pratham31012002/Smart_Surfing?style=social)](https://github.com/pratham31012002/Smart_Surfing/stargazers) [![GitHub forks](https://img.shields.io/github/forks/akshatvg/Narrative?style=social&logo=git)](https://github.com/akshatvg/Narrative/network)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/pratham31012002/Smart_Surfing?logo=github&style=social)](https://github.com/pratham31012002/) [![GitHub last commit](https://img.shields.io/github/last-commit/pratham31012002/Smart_Surfing?style=social&logo=git)](https://github.com/pratham31012002/) [![GitHub stars](https://img.shields.io/github/stars/pratham31012002/Smart_Surfing?style=social)](https://github.com/pratham31012002/Smart_Surfing/stargazers) [![GitHub forks](https://img.shields.io/github/forks/pratham31012002/Smart_Surfing?style=social&logo=git)](https://github.com/pratham31012002/Smart_Surfing/network)
 
 <p align="center">
   <img src="images/LOGO3.png" height="100px"></img>
